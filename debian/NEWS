@@ -1,0 +1,12 @@
+clipit (1.4.4+git20190202-2) unstable; urgency=medium
+
+  ClipIt has been deprecated and is no longer supported.
+
+  Diodon is a supported replacement for ClipIt.
+
+  Please note that the user settings cannot be migrated.
+  You can still access them in ~/.config/clipit/clipitrc.
+
+  The original ClipIt binary is shipped as /usr/bin/clipit.real.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 02 May 2020 10:56:40 +0200

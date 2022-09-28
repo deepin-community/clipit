@@ -1,0 +1,158 @@
+clipit (1.4.4+git20190202-2) unstable; urgency=medium
+
+  * Deprecate ClipIt:
+    - Ship a script showing a deprecation notice as /usr/bin/clipit.
+    - Move the real clipit to /usr/bin/clipit.real.
+    - Depend on diodon.
+    - Depend on zenity for the deprecation notice.
+    Closes: #658532, #658533, #679488, #819496, #875903, #903149,
+      #903997, #909309.
+    Diodon will be removed from Debian after Bullseye is released.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 02 May 2020 11:10:53 +0200
+
+clipit (1.4.4+git20190202-1) unstable; urgency=medium
+
+  * New upstream snapsnot 1.4.4+git20190202.
+  * Add Ubuntu mono icons.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 05 Feb 2019 14:22:27 +0100
+
+clipit (1.4.4+git20190129-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/watch: Use https protocol.
+
+  [ Andrej Shadura ]
+  * New maintainer (Closes: #908797).
+  * New upstream snapshot 1.4.4+git20190129.
+    - Do not use busy wait when checking for new clipboard content.
+      Closes: #721007.
+  * Nuke patches, build Git snapshots instead.
+  * Use debhelper 12.
+  * Use Ayatana indicators (Closes: #912212).
+
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 29 Jan 2019 17:20:52 +0100
+
+clipit (1.4.4-2) unstable; urgency=medium
+
+  * Patchworks: patches updated as committed upstream.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sat, 07 Jul 2018 16:03:38 +1000
+
+clipit (1.4.4-1) unstable; urgency=medium
+
+  * New upstream release [June 2018].
+  * Build using "--with-gtk3", "--enable-appindicator";
+  * Updated Homepage URL.
+  * Vcs URLs to Salsa.
+  * Removed "menu" file.
+  * debhelper & compat to version 11.
+  * Standards-Version: 4.1.4
+  * watch: check GitHub for releases.
+  * Set myself as Maintainer. Thanks, Jackson Doak.
+  * Build-Depends:
+    - libgtk2.0-dev
+    + libgtk-3-dev
+    - libappindicator-dev (>= 0.2.4)
+    + libappindicator3-dev
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Fri, 29 Jun 2018 11:48:38 +1000
+
+clipit (1.4.2-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix Maintainer field.
+  * Add Vcs-* fields.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Sat, 29 Oct 2016 16:55:27 +0200
+
+clipit (1.4.2-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Logan Rosen ]
+  * debian/control: Build-depend on libappindicator-dev (>= 0.2.4).
+
+  [ Andrew Shadura ]
+  * Apply upstream patches for proper UTF-8 ellipsising.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Sat, 29 Oct 2016 14:07:30 +0200
+
+clipit (1.4.2-1) unstable; urgency=low
+
+  * New upstream version 1.4.2
+  * Delete patch glib-single-include.patch it is fixed in the new version
+  * Set myself as maintainer. closes: #718681
+  * Update debhelper to version 9
+  * Update standards version to 3.9.4
+  * Enable hardening and verbose mode in debian/rules
+  * Set xdotool as "required"
+  * Updated copyright file to standard 1.0
+
+ -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 04 Aug 2013 18:40:05 +1000
+
+clipit (1.4.1-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+
+  [ Sebastian Ramacher ]
+  * debian/patches/glib-single-include.patch: Apply patch from Michael Biebl
+    to fix build with newer glib. (Closes: #665518)
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 13 Jul 2013 14:39:12 +0200
+
+clipit (1.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixed bug with indicator-menu not refreshing properly. (LP: #782248)
+  * Move xdotool from Build-Depends to Recommends.
+  * Set DM-Upload-Allowed flag, ACKed by David Paleino <dapal>.
+
+ -- Cristian Henzel <oss@rspwn.com>  Fri, 27 May 2011 11:18:10 +0300
+
+clipit (1.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Cristian Henzel <oss@rspwn.com>  Sat, 21 May 2011 21:31:05 +0300
+
+clipit (1.3.13-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixed problem with indicator code causing X to freeze. (LP: #702316)
+
+ -- Cristian Henzel <oss@rspwn.com>  Tue, 03 May 2011 09:20:35 +0300
+
+clipit (1.3.12-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixed typo and added some info to description. (Closes: #611702, #615830)
+
+ -- Cristian Henzel <oss@rspwn.com>  Mon, 28 Feb 2011 16:28:49 +0200
+
+clipit (1.3.11-1) unstable; urgency=low
+
+  * New upstream release.
+
+  * Fixed problem with all files being executable.
+
+ -- Cristian Henzel <oss@rspwn.com>  Tue, 04 Jan 2011 11:00:47 +0200
+
+clipit (1.3.9-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Cristian Henzel <oss@rspwn.com>  Mon, 20 Dec 2010 13:32:36 +0200
+
+clipit (1.3.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Cristian Henzel <oss@web-tm.com>  Mon, 06 Dec 2010 13:41:26 +0200
+
+clipit (1.3.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #603131)
+
+ -- Cristian Henzel <oss@web-tm.com>  Tue, 30 Nov 2010 08:27:14 +0100
