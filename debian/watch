@@ -1,13 +1,12 @@
 version=4
-
-opts="mode=git, pgpmode=none, pretty=1.4.4+git%cd, repack" \
+opts="mode=git, pgpmode=none, pretty=1.4.5+git%cd, repack" \
  https://github.com/CristianHenzel/ClipIt \
  HEAD
-
-opts=\
-pgpmode=none,\
-repack,compression=xz,\
- https://github.com/CristianHenzel/ClipIt/releases \
-  .*/archive/v?(\d[\d\.]+)\.tar\.gz
-
-https://sf.net/gtkclipit/clipit-(.*)\.tar\.gz
+#
+#opts=\
+#pgpmode=none,\
+#repack,compression=xz,\
+# https://github.com/CristianHenzel/ClipIt/releases \
+#  .*/archive/v?(\d[\d\.]+)\.tar\.gz
+#
+#https://sf.net/gtkclipit/clipit-(.*)\.tar\.gz

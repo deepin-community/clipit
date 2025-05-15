@@ -1,3 +1,47 @@
+clipit (1.4.5+git20241103-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream snapshot.
+  * debian/patches/missing-prototypes.patch: Dropped, merged upstream.
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 04 Apr 2025 09:11:09 -0400
+
+clipit (1.4.5+git20210313-3) unstable; urgency=medium
+
+  * QA upload.
+  * Fix building with -Werror=incompatible-pointer-types.  (Closes: #1074885)
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 09 Sep 2024 19:44:41 +0200
+
+clipit (1.4.5+git20210313-2) unstable; urgency=medium
+
+  * QA upload.
+  * Fix building with -Werror=implicit-function-declaration.
+    (Closes: #1066289)
+  * Set Rules-Requires-Root: no.
+
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 03 Apr 2024 00:36:46 +0200
+
+clipit (1.4.5+git20210313-1) unstable; urgency=medium
+
+  * QA upload.
+
+  [ Boyuan Yang ]
+  * New upstream release. (Closes: #1023658)
+  * Update standards version to 4.6.2, no changes needed.
+  * debian/: Apply "wrap-and-sort -abst".
+  * debian/changelog: Fix typo. (Closes: #960109)
+  * debian/watch: Fix monitoring script.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Bump debhelper from old 12 to 13.
+  * Set upstream metadata fields: Archive.
+  * Avoid explicitly specifying -Wl,--as-needed linker flag.
+
+ -- Boyuan Yang <byang@debian.org>  Wed, 20 Dec 2023 18:13:12 -0500
+
 clipit (1.4.4+git20190202-2) unstable; urgency=medium
 
   * Deprecate ClipIt:
@@ -7,7 +51,7 @@ clipit (1.4.4+git20190202-2) unstable; urgency=medium
     - Depend on zenity for the deprecation notice.
     Closes: #658532, #658533, #679488, #819496, #875903, #903149,
       #903997, #909309.
-    Diodon will be removed from Debian after Bullseye is released.
+    Clipit will be removed from Debian after Bullseye is released.
 
  -- Andrej Shadura <andrewsh@debian.org>  Sat, 02 May 2020 11:10:53 +0200
 

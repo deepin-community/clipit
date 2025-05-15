@@ -3,7 +3,6 @@
 # To enable all, uncomment following line
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
@@ -12,6 +11,7 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 	dh $@
 
 override_dh_autoreconf:
+	mkdir m4; touch m4/.placeholder
 	dh_autoreconf
 #~	[ ! -x "./autogen.sh" ] || ./autogen.sh
 ## call `intltoolize` to fix the following error:
@@ -21,8 +21,7 @@ override_dh_autoreconf:
 ## ~~~~/
 	intltoolize --automake --copy --force
 
-override_dh_auto_install:
-	dh_auto_install
+execute_after_dh_auto_install:
 	mv debian/clipit/usr/bin/clipit debian/clipit/usr/bin/clipit.real
 
 override_dh_auto_configure:

@@ -46,6 +46,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <string.h>
+#include <sys/stat.h>
 
 #define ICON "clipit-trayicon"
 #define ICON_OFFLINE "clipit-trayicon-offline"
@@ -602,8 +603,6 @@ static gboolean menu_key_pressed(GtkWidget *history_menu, GdkEventKey *event, gp
  * match should be a pointer to the first character of the matched text.
  */
 void underline_match(char* match, GtkMenuItem* menu_item, const gchar* menu_label) {
-  if (!match)
-    return;
 
   int start = match - menu_label;
   int end = start + strlen(input_buffer);
@@ -653,7 +652,7 @@ gboolean selected_by_input(const GtkWidget *history_menu, const GdkEventKey *eve
     gtk_menu_item_deselect(menu_item);
 
     match = strcasestr(menu_label, input_buffer);
-    if (match) {
+    if (match && *match!='\0') {
       if (!first_match)
         first_match = menu_item;
       match_count++;
@@ -713,12 +712,9 @@ gboolean selected_by_digit(const GtkWidget *history_menu, const GdkEventKey *eve
     case XK_KP_9:
 	  selection = 9;
       break;
-    case XK_0:
-    case XK_KP_0:
-	  selection = 0;
-      break;
   }
-  if (selection >= 0) {
+  if (selection > 0) {
+	--selection; // The item index is counted from 0, but listed on screen from 1
 	item_selected((GtkMenuItem*)history_menu, GINT_TO_POINTER(selection));
 	gtk_widget_destroy(history_menu);
 	return TRUE;
@@ -1082,6 +1078,7 @@ static void clipit_init() {
 
 /* This is Sparta! */
 int main(int argc, char **argv) {
+	umask(0077);
 	bindtextdomain(GETTEXT_PACKAGE, CLIPITLOCALEDIR);
 	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
 	textdomain(GETTEXT_PACKAGE);
