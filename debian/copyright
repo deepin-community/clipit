@@ -8,14 +8,6 @@ Copyright: 2010-2012 Cristian Henzel <oss@rspwn.com>
            2007-2008, Gilberto "Xyhthyx" Miralla <xyhthyx@gmail.com>
 License: GPL-3+
 
-Files: debian/clipit-is-dead.sh
-Copyright: 2020 Andrej Shadura <andrewsh@debian.org>
-License: LGPL-2+ or public-domain
-
-Files: debian/icons/*
-Copyright: 2019 Andrej Shadura <andrewsh@debian.org>
-License: LGPL-2+ or public-domain
-
 Files: src/eggaccelerators.c
 Copyright: 2002, Red Hat, Inc.
            1998, 2001 Tim Janik
@@ -54,6 +46,14 @@ Copyright: 2010, Cristian Henzel <oss@rspwn.com>
            2013, Jackson Doak <noskcaj@ubuntu.com>
 License: GPL-3+
 
+Files: debian/clipit-is-dead.sh
+Copyright: 2020 Andrej Shadura <andrewsh@debian.org>
+License: LGPL-2+ or public-domain
+
+Files: debian/icons/*
+Copyright: 2019 Andrej Shadura <andrewsh@debian.org>
+License: LGPL-2+ or public-domain
+
 License: LGPL-2+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Library General Public
@@ -71,7 +71,7 @@ License: LGPL-2+
  .
  On Debian systems, the complete text of the GNU General
  Public License can be found in `/usr/share/common-licenses/LGPL-2'
- 
+
 License: GPL-3+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

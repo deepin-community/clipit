@@ -2,19 +2,17 @@ Source: clipit
 Section: oldlibs
 Priority: optional
 Maintainer: Debian QA Group <packages@qa.debian.org>
-Build-Depends: debhelper-compat (= 12)
-    ,dh-exec
-    ,intltool
-    ,libayatana-appindicator3-dev
-    ,libgtk-3-dev
-Standards-Version: 4.1.4
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-exec,
+ intltool,
+ libayatana-appindicator3-dev,
+ libgtk-3-dev,
+Rules-Requires-Root: no
+Standards-Version: 4.7.2
 Homepage: https://github.com/CristianHenzel/ClipIt
 Vcs-Browser: https://salsa.debian.org/debian/clipit
 Vcs-Git: https://salsa.debian.org/debian/clipit.git
-
-Package: clipit
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, xdotool, zenity, diodon
 Description: lightweight GTK+ clipboard manager (deprecated)
  Clipboard manager with features such as:
   * Save history of your last copied items
@@ -29,3 +27,14 @@ Description: lightweight GTK+ clipboard manager (deprecated)
  Diodon is a replacement for ClipIt, which is no longer supported.
  .
  This package may be safely removed after the migration to Diodon is complete.
+
+Package: clipit
+Architecture: any
+Depends:
+ diodon,
+ xdotool,
+ zenity,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: ${source:Synopsis}
+ ${source:Extended-Description}
